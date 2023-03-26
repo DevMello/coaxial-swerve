@@ -1,4 +1,4 @@
-package tk.devmello.swerve.coaxial;
+package tk.devmello.swerve.swerve;
 
 import android.graphics.PointF;
 import com.qualcomm.robotcore.hardware.CRServo;
@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.Range;
+import tk.devmello.devlogger.General;
 
 public class SwerveDrive {
 
@@ -56,15 +57,7 @@ public class SwerveDrive {
         motors[0].setDirection(DcMotorSimple.Direction.REVERSE);
         motors[1].setDirection(DcMotorSimple.Direction.REVERSE);
     }
-    public void init(HardwareMap hardwareMap){
-        String[] crServoNames = new String[] {"BLC", "FLC", "FRC", "BRC"};
-        for (int i=0; i<4; i++) crServos[i] = (CRServo)hardwareMap.get(CRServo.class, crServoNames[i]);
-        String[] encoderNames = new String[] {"BLE", "FLE", "FRE", "BRE"};
-        for (int i=0; i<4; i++) encoders[i] = (DcMotor)hardwareMap.get(DcMotor.class, encoderNames[i]);
-        String[] motorNames = new String[] {"BLM", "FLM", "FRM", "BRM"};
-        for (int i=0; i<4; i++) motors[i] = (DcMotor)hardwareMap.get(DcMotor.class, motorNames[i]);
 
-    }
     /**
      * Sets the robot drive speed (linear and angular)
      * @param vx    Speed (inches per sec) in X direction (positive is rightward)
@@ -96,6 +89,8 @@ public class SwerveDrive {
             boolean reversed = setSteer(i, targetSteer);
             if (reversed) wheelPowers[i] *= -1;
             motors[i].setPower(wheelPowers[i]);
+            General.logger.consoleLogInfo(String.valueOf(wheelPowers[i]) +": " + motors[i].getDeviceName());
+            General.logger.fault.log(String.valueOf(wheelPowers[i]) +": " + motors[i].getDeviceName());
         }
     }
 
@@ -113,6 +108,8 @@ public class SwerveDrive {
         }
         double steerPower = Range.clip(4.0*offset/Math.PI, -1, 1);
         crServos[i].setPower(steerPower);
+        General.logger.consoleLogInfo(String.valueOf(steerPower) + ": " + crServos[i].getDeviceName());
+        General.logger.fault.log(String.valueOf(steerPower) + ": " + crServos[i].getDeviceName());
         return result;
     }
 
