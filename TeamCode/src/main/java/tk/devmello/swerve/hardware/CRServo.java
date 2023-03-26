@@ -1,12 +1,15 @@
 package tk.devmello.swerve.hardware;
 
 import com.arcrobotics.ftclib.hardware.motors.Motor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.PwmControl;
 
 
 public class CRServo extends Motor implements PwmControl {
-
+    private DcMotorSimple.Direction direction = DcMotorSimple.Direction.FORWARD;
+    private double power = 0.0;
+    private double positionDegrees = 0.0;
 
     protected com.qualcomm.robotcore.hardware.CRServo crServo;
 

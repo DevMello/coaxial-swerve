@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.util.Range;
 import tk.devmello.swerve.controller.PController;
 
 //import servo from
-import com.qualcomm.robotcore.hardware.CRServoImplEx;
+import com.qualcomm.robotcore.hardware.CRServoImpl;
 import com.arcrobotics.ftclib.hardware.motors.Motor;
 import tk.devmello.swerve.controller.PIDFController;
 import tk.devmello.swerve.hardware.CRServo;
