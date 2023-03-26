@@ -26,15 +26,10 @@ public abstract class RobotDrive {
     }
 
     public RobotDrive() {
-
     }
-
-
     public void setMaxSpeed(double maxOutput) {
         this.maxOutput = maxOutput;
     }
-
-
     public void setRange(double min, double max) {
         rangeMin = min;
         rangeMax = max;
@@ -47,8 +42,6 @@ public abstract class RobotDrive {
     }
 
     public abstract void stopMotor();
-
-
     protected void normalize(double[] wheelSpeeds) {
         double maxMagnitude = Math.abs(wheelSpeeds[0]);
         for (int i = 1; i < wheelSpeeds.length; i++) {
