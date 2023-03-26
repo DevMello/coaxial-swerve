@@ -10,7 +10,6 @@ public class CoaxialDrive extends RobotDrive{
      * the vertical distance between each wheel
      */
     private double L;
-
     /**
      * the horizontal distance between each wheel
      */
