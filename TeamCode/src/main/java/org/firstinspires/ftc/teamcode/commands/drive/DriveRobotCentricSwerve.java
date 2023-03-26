@@ -8,11 +8,11 @@ import org.firstinspires.ftc.teamcode.subsystem.SwerveSubsystem;
 
 import java.util.function.DoubleSupplier;
 
-public class DriveRobotCentric extends CommandBase {
+public class DriveRobotCentricSwerve extends CommandBase {
     private final SwerveSubsystem drive;
     private final DoubleSupplier strafeSpeed, forwardSpeed, turnSpeed;
 
-    public DriveRobotCentric(SwerveSubsystem drive, DoubleSupplier strafeSpeed, DoubleSupplier forwardSpeed, DoubleSupplier turnSpeed){
+    public DriveRobotCentricSwerve(SwerveSubsystem drive, DoubleSupplier strafeSpeed, DoubleSupplier forwardSpeed, DoubleSupplier turnSpeed){
         this.drive = drive;
         this.strafeSpeed = strafeSpeed;
         this.forwardSpeed = forwardSpeed;

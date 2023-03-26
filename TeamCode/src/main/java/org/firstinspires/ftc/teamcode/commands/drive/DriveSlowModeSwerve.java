@@ -7,11 +7,11 @@ import org.firstinspires.ftc.teamcode.subsystem.SwerveSubsystem;
 
 import java.util.function.DoubleSupplier;
 
-public class DriveSlowMode extends CommandBase {
+public class DriveSlowModeSwerve extends CommandBase {
     private final SwerveSubsystem drive;
     private final DoubleSupplier strafeSpeed, forwardSpeed, turnSpeed;
 
-    public DriveSlowMode(SwerveSubsystem drive, DoubleSupplier strafeSpeed, DoubleSupplier forwardSpeed, DoubleSupplier turnSpeed){
+    public DriveSlowModeSwerve(SwerveSubsystem drive, DoubleSupplier strafeSpeed, DoubleSupplier forwardSpeed, DoubleSupplier turnSpeed){
         this.drive = drive;
         this.strafeSpeed = strafeSpeed;
         this.forwardSpeed = forwardSpeed;
