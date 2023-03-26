@@ -5,7 +5,7 @@ import com.arcrobotics.ftclib.command.SubsystemBase;
 
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import tk.devmello.swerve.coaxial.SwerveDrive;
+import tk.devmello.swerve.swerve.SwerveDrive;
 
 public class SwerveSubsystem extends SubsystemBase {
     private final SwerveDrive drive;
