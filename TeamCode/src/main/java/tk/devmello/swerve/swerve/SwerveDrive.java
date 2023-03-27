@@ -12,7 +12,8 @@ public class SwerveDrive {
 
     public static final double WHEEL_CIRCUMFERENCE = 2.75590551 * Math.PI;
     //may be changed
-    public static final double TICKS_PER_ROTATION = 0;
+    public static final double TICKS_PER_ROTATION = 283.6;
+
     //lowkey need to tune this? motor encoder of motor on pod tick btw
     public static final double MAX_TICKS_PER_SECOND = 2500;
 
@@ -21,9 +22,9 @@ public class SwerveDrive {
     public static final double MAX_DRIVE_SPEED = MAX_TICKS_PER_SECOND * WHEEL_CIRCUMFERENCE / TICKS_PER_ROTATION;
     public static final double MAX_ANGULAR_SPEED = MAX_DRIVE_SPEED / Math.sqrt(CHASSIS_RAD_SQUARED);
 
-    CRServo[] crServos = new CRServo[4];    //Steering
-    DcMotor[] encoders = new DcMotor[4];    //Encoders to monitor steering
-    DcMotor[] motors = new DcMotor[4];      //Drive motors
+    CRServo[] crServos;    //Steering
+    DcMotor[] encoders;    //Encoders to monitor steering
+    DcMotor[] motors;      //Drive motors
 
     //Positions of the four drive wheels in robot-coordinate system, in inches
     public static final PointF[] WHEEL_POS = new PointF[]{
@@ -89,11 +90,10 @@ public class SwerveDrive {
             boolean reversed = setSteer(i, targetSteer);
             if (reversed) wheelPowers[i] *= -1;
             motors[i].setPower(wheelPowers[i]);
-            General.logger.consoleLogInfo(String.valueOf(wheelPowers[i]) +": " + motors[i].getDeviceName());
-            General.logger.fault.log(String.valueOf(wheelPowers[i]) +": " + motors[i].getDeviceName());
+            General.logger.consoleLogInfo(wheelPowers[i] +": " + motors[i].getDeviceName());
+            General.logger.fault.log(wheelPowers[i] +": " + motors[i].getDeviceName());
         }
     }
-
     private double getSteerRadians(int i){
         return normalizeRadians(2.0 * Math.PI * encoders[i].getCurrentPosition()/TICKS_PER_ROTATION);
     }
@@ -108,8 +108,8 @@ public class SwerveDrive {
         }
         double steerPower = Range.clip(4.0*offset/Math.PI, -1, 1);
         crServos[i].setPower(steerPower);
-        General.logger.consoleLogInfo(String.valueOf(steerPower) + ": " + crServos[i].getDeviceName());
-        General.logger.fault.log(String.valueOf(steerPower) + ": " + crServos[i].getDeviceName());
+        General.logger.consoleLogInfo(steerPower + ": " + crServos[i].getDeviceName());
+        General.logger.fault.log(steerPower + ": " + crServos[i].getDeviceName());
         return result;
     }
 
