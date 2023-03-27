@@ -1,6 +1,6 @@
 package tk.devmello.swerve.coaxial;
 
-import com.arcrobotics.ftclib.geometry.Vector2d;
+import tk.devmello.math.geometry.Vector2d;
 import tk.devmello.swerve.RobotDrive;
 import tk.devmello.swerve.coaxial.impl.CoaxialModule;
 
