@@ -3,8 +3,8 @@ package org.firstinspires.ftc.teamcode.subsystem;
 import com.acmerobotics.dashboard.config.Config;
 import com.arcrobotics.ftclib.command.SubsystemBase;
 import org.firstinspires.ftc.teamcode.subsystem.options.DriveMode;
-import tk.devmello.swerve.coaxial.CoaxialDrive;
-import tk.devmello.swerve.coaxial.impl.CoaxialModule;
+import tk.devmello.mellolib.swerve.coaxial.CoaxialDrive;
+import tk.devmello.mellolib.swerve.coaxial.impl.CoaxialModule;
 
 @Config
 public class CoaxialSubsystem extends SubsystemBase{

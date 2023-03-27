@@ -12,8 +12,7 @@ import com.arcrobotics.ftclib.hardware.motors.MotorEx;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import org.firstinspires.ftc.teamcode.subsystem.CoaxialSubsystem;
-import org.firstinspires.ftc.teamcode.subsystem.SwerveSubsystem;
-import tk.devmello.swerve.coaxial.impl.CoaxialModule;
+import tk.devmello.mellolib.swerve.coaxial.impl.CoaxialModule;
 
 public class CoaxialDriveBaseOpMode extends CommandOpMode {
 
@@ -65,7 +64,7 @@ public class CoaxialDriveBaseOpMode extends CommandOpMode {
     public void createModule(CRServo servo, Motor motor, MotorEx encoder) {
         //cycle through the array of modules and create a CoaxialModule object with the servo, motor, and encoder
         for (int i=0; i<4; i++) {
-            modules[i] = new CoaxialModule((tk.devmello.swerve.hardware.CRServo) servo, motor, encoder, 0.2);
+            modules[i] = new CoaxialModule((tk.devmello.mellolib.swerve.hardware.CRServo) servo, motor, encoder, 0.2);
         }
     }
 

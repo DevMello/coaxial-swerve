@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.opmode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import tk.devmello.swerve.swerve.SwerveDrive;
+import tk.devmello.mellolib.swerve.swerve.SwerveDrive;
 
 @TeleOp(name = "Test Swerve", group = "Test")
 public class TestSwerve extends OpMode {
