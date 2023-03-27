@@ -1,10 +1,10 @@
-package org.firstinspires.ftc.teamcode.opmode;
+package org.firstinspires.ftc.teamcode.opmode.swerve;
 
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.commands.drive.DriveRobotCentricSwerve;
 
 @TeleOp(name = "Swerve Drive Test", group = "TeleOp")
-public class DriveOpMode extends DriveBaseOpMode{
+public class SwerveDriveOpMode extends SwerveDriveBaseOpMode {
     private DriveRobotCentricSwerve robotCentricDrive;
 
     @Override
