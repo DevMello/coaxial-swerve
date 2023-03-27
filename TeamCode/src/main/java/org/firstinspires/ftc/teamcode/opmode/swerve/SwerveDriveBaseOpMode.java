@@ -1,16 +1,15 @@
-package org.firstinspires.ftc.teamcode.opmode;
+package org.firstinspires.ftc.teamcode.opmode.swerve;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 import com.arcrobotics.ftclib.command.CommandOpMode;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
 import com.arcrobotics.ftclib.hardware.RevIMU;
-import com.arcrobotics.ftclib.hardware.motors.MotorEx;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import org.firstinspires.ftc.teamcode.subsystem.SwerveSubsystem;
 
-public class DriveBaseOpMode extends CommandOpMode {
+public class SwerveDriveBaseOpMode extends CommandOpMode {
     CRServo[] crServos = new CRServo[4];    //Steering
     DcMotor[] encoders = new DcMotor[4];    //Encoders to monitor steering
     DcMotor[] motors = new DcMotor[4];
