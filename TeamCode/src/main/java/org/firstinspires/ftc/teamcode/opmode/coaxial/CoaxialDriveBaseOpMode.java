@@ -3,7 +3,9 @@ package org.firstinspires.ftc.teamcode.opmode.coaxial;
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 import com.arcrobotics.ftclib.command.CommandOpMode;
+import com.arcrobotics.ftclib.command.button.GamepadButton;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
+import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 import com.arcrobotics.ftclib.hardware.RevIMU;
 import com.arcrobotics.ftclib.hardware.motors.Motor;
 import com.arcrobotics.ftclib.hardware.motors.MotorEx;
@@ -65,5 +67,9 @@ public class CoaxialDriveBaseOpMode extends CommandOpMode {
         for (int i=0; i<4; i++) {
             modules[i] = new CoaxialModule((tk.devmello.swerve.hardware.CRServo) servo, motor, encoder, 0.2);
         }
+    }
+
+    protected GamepadButton gb1(GamepadKeys.Button button){
+        return gamepadEx1.getGamepadButton(button);
     }
 }
