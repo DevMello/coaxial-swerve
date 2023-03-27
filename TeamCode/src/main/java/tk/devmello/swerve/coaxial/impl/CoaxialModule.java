@@ -38,7 +38,7 @@ public class CoaxialModule {
     private double position = 0.0;
     private boolean wheelFlipped = true;
 
-    public CoaxialModule(CRServo turn, Motor drive, double p, MotorEx encoder) {
+    public CoaxialModule(CRServo turn, Motor drive, MotorEx encoder,double p)  {
         turnServo = turn;
         (turnServo).setPwmRange(new PwmControl.PwmRange(500, 2500, 5000));
         driveMotor = drive;
