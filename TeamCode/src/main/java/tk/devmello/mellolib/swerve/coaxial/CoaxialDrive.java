@@ -1,6 +1,6 @@
 package tk.devmello.mellolib.swerve.coaxial;
 
-import tk.devmello.mellolib.geometry.Vector2d;
+import tk.devmello.mellolib.math.geometry.Vector2d;
 import tk.devmello.mellolib.swerve.coaxial.impl.CoaxialModule;
 import tk.devmello.mellolib.swerve.RobotDrive;
 
