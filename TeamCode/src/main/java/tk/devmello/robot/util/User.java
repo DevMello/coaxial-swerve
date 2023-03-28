@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import tk.devmello.mellolib.devlogger.util.condition.Expectation;
 import tk.devmello.mellolib.devlogger.util.condition.Magnitude;
-import tk.devmello.robot.General;
+import tk.devmello.robot.bot.General;
 
 public enum User {
     /**
