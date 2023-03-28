@@ -1,4 +1,4 @@
-package tk.devmello.mellolib.geometry;
+package tk.devmello.mellolib.math.geometry;
 
 
 /**
