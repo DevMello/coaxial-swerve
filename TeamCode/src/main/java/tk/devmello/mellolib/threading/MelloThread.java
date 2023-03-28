@@ -1,6 +1,6 @@
 package tk.devmello.mellolib.threading;
 
-import tk.devmello.mellolib.devlogger.General;
+import tk.devmello.mellolib.devlogger.Constant;
 import tk.devmello.mellolib.devlogger.util.condition.Expectation;
 import tk.devmello.mellolib.devlogger.util.condition.Magnitude;
 import tk.devmello.mellolib.devlogger.util.misc.ExceptionCatcher;
@@ -130,7 +130,7 @@ public class MelloThread extends Thread{
      */
     private synchronized void checkException() {
         if (wasExceptionThrown) {
-            General.logger.fault.warn("Exception was thrown in thread " + name, Expectation.SURPRISING, Magnitude.CATASTROPHIC);
+            Constant.logger.fault.warn("Exception was thrown in thread " + name, Expectation.SURPRISING, Magnitude.CATASTROPHIC);
         }
     }
     /**
