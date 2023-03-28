@@ -1,5 +1,6 @@
 package tk.devmello.mellolib.threading;
 
+import tk.devmello.mellolib.codeseg.ExceptionCodeSeg;
 import tk.devmello.mellolib.devlogger.Constant;
 import tk.devmello.mellolib.devlogger.util.condition.Expectation;
 import tk.devmello.mellolib.devlogger.util.condition.Magnitude;
@@ -36,7 +37,7 @@ public class MelloThread extends Thread{
      * Refresh rate in Hz (cycles p
      */
     private final double updateRate;
-    private Runnable runnable;
+    private ExceptionCodeSeg runnable;
     /**
      * Constructor, creates thread using name and adds it to the arraylist
      * @param name
@@ -44,7 +45,12 @@ public class MelloThread extends Thread{
     public MelloThread(String name) {
         this.name = name;
         this.updateRate = 60;
-        this.runnable = () -> {};
+        allMelloThreads.add(this);
+    }
+
+    public MelloThread(String name, double updateRate) {
+        this.name = name;
+        this.updateRate = updateRate;
         allMelloThreads.add(this);
     }
     /**
@@ -52,7 +58,7 @@ public class MelloThread extends Thread{
      * @param name
      * @param updateRate
      */
-    public MelloThread(String name, double updateRate, Runnable runnable) {
+    public MelloThread(String name, double updateRate, ExceptionCodeSeg runnable) {
         this.name = name;
         this.updateRate = updateRate;
         this.runnable = runnable;
@@ -74,8 +80,8 @@ public class MelloThread extends Thread{
              */
             try {
                 runnable.run();
-            } catch (RuntimeException r){
-                r.printStackTrace();
+            } catch (Throwable e) {
+                e.printStackTrace();
                 wasExceptionThrown = true;
                 stopThread();
             }
@@ -104,7 +110,7 @@ public class MelloThread extends Thread{
      * Set the code that will be run in the thread
      * @param runnable
      */
-    public static void setExecutionCode(Runnable runnable) {
+    public static void setExecutionCode(ExceptionCodeSeg runnable) {
         for (MelloThread thread : allMelloThreads) {
             thread.runnable = runnable;
         }
