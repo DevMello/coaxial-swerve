@@ -9,8 +9,6 @@ import tk.devmello.mellolib.codeseg.ReturnParameterCodeSeg;
 import java.util.*;
 import java.util.function.ToDoubleFunction;
 
-import static tk.devmello.robot.General.log;
-
 
 public interface Iterator {
     /**
