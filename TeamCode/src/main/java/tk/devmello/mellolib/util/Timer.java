@@ -5,7 +5,7 @@ import tk.devmello.mellolib.devlogger.Constant;
 import tk.devmello.mellolib.devlogger.util.condition.Expectation;
 import tk.devmello.mellolib.devlogger.util.condition.Magnitude;
 
-import static tk.devmello.robot.General.gameTime;
+import static tk.devmello.robot.bot.General.gameTime;
 
 public class Timer {
     /**
