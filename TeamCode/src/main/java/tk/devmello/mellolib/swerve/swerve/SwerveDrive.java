@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.Range;
-import tk.devmello.mellolib.devlogger.General;
+import tk.devmello.mellolib.devlogger.Constant;
 
 public class SwerveDrive {
 
@@ -89,8 +89,8 @@ public class SwerveDrive {
             boolean reversed = setSteer(i, targetSteer);
             if (reversed) wheelPowers[i] *= -1;
             motors[i].setPower(wheelPowers[i]);
-            General.logger.consoleLogInfo(wheelPowers[i] +": " + motors[i].getDeviceName());
-            General.logger.fault.log(wheelPowers[i] +": " + motors[i].getDeviceName());
+            Constant.logger.consoleLogInfo(wheelPowers[i] +": " + motors[i].getDeviceName());
+            Constant.logger.fault.log(wheelPowers[i] +": " + motors[i].getDeviceName());
         }
     }
     private double getSteerRadians(int i){
@@ -107,8 +107,8 @@ public class SwerveDrive {
         }
         double steerPower = Range.clip(4.0*offset/Math.PI, -1, 1);
         crServos[i].setPower(steerPower);
-        General.logger.consoleLogInfo(steerPower + ": " + crServos[i].getDeviceName());
-        General.logger.fault.log(steerPower + ": " + crServos[i].getDeviceName());
+        Constant.logger.consoleLogInfo(steerPower + ": " + crServos[i].getDeviceName());
+        Constant.logger.fault.log(steerPower + ": " + crServos[i].getDeviceName());
         return result;
     }
 
