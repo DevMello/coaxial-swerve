@@ -1,4 +1,4 @@
-package tk.devmello.robot;
+package tk.devmello.robot.bot;
 
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -6,9 +6,15 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import tk.devmello.mellolib.devlogger.Logger;
 import tk.devmello.mellolib.devlogger.debugging.Log;
+import tk.devmello.mellolib.devlogger.util.storage.Storage;
 import tk.devmello.robot.util.User;
 
 public class General {
+
+    /**
+     * Bot initialization
+     */
+    public static SwerveBot bot;
 
     public static Logger logger = new Logger("General Robot");
     /**
@@ -35,4 +41,9 @@ public class General {
     public static User mainUser;
 
     public static Log log = new Log("General Robot");
+
+    public static Storage storage = new Storage();
+
+
+
 }
