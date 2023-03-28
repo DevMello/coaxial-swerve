@@ -60,4 +60,12 @@ public class BackgroundTask {
         task.run();
     }
 
+    /**
+     * Is the background task done
+     * @return isDone
+     */
+    public boolean isDone(){
+        return exit.shouldStop();
+    }
+
 }
