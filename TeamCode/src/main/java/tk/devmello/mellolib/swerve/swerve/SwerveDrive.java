@@ -116,4 +116,15 @@ public class SwerveDrive {
         double temp = (radians + Math.PI) / (2.0 * Math.PI);
         return (temp - Math.floor(temp) - 0.5) * 2.0 * Math.PI;
     }
+
+    //create a Swerve Module State class
+    public static class SwerveModuleState {
+        public final double speedMetersPerSecond;
+        public final double angleRadians;
+
+        public SwerveModuleState(double speedMetersPerSecond, double angleRadians) {
+            this.speedMetersPerSecond = speedMetersPerSecond;
+            this.angleRadians = angleRadians;
+        }
+    }
 }

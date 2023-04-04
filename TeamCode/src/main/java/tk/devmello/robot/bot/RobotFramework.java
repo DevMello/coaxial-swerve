@@ -1,5 +1,6 @@
 package tk.devmello.robot.bot;
 
+import tk.devmello.mellolib.math.geometry.framework.CoordinatePlane;
 import tk.devmello.mellolib.threading.MelloThread;
 import tk.devmello.mellolib.util.Iterator;
 import tk.devmello.robot.hardware.RobotPart;
@@ -24,6 +25,7 @@ public class RobotFramework {
      */
     public static ArrayList<RobotPart> allRobotParts;
 
+    public CoordinatePlane localPlane;
     public static MelloThread robotFunctionsThread;
     /**
      * The odometry thread is used to update odometry
