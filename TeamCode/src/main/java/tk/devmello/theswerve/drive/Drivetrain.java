@@ -1,4 +1,10 @@
 package tk.devmello.theswerve.drive;
 
-public class Drivetrain {
+import tk.devmello.theswerve.math.Pose;
+
+public interface Drivetrain {
+    void set(Pose pose);
+
+    void set(Pose pose, double maxPower);
 }
+
